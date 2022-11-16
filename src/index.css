@@ -105,8 +105,13 @@ body {
     font-size: 0.9rem;
   }
 }
-.page-wrapper .notif-list .notif-container .notif-text .notif-activity .active {
-  position: relative;
+.page-wrapper .notif-list .notif-container .notif-text .notif-activity .notif-details .notif-name {
+  font-weight: 700;
+  color: hsl(219, 85%, 26%);
+}
+.page-wrapper .notif-list .notif-container .notif-text .notif-activity .notif-details .notif-link {
+  font-weight: 700;
+  color: hsl(219, 85%, 26%);
 }
 .page-wrapper .notif-list .notif-container .notif-text .time-marker {
   font-size: 0.6rem;

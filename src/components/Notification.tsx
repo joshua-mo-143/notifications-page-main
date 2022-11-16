@@ -12,15 +12,15 @@ type Props = {
 const Notification = ({name, imgsrc, action, link, time, unread}: Props) => {
 
   return (
-    <div className={`notif-container ${unread ? "unread" : ""}`}>
+    <article className={`notif-container ${unread ? "unread" : ""}`}>
         <img src={imgsrc} className="user-avatar" alt={`Avatar for ${name}`}/>
         <div className='notif-text'>
             <div className="notif-activity">
-            <p className=""><span>{name}</span> <span>{action}</span> <span>{link}</span></p>
+            <p className="notif-details"><span className='notif-name'>{name}</span> <span className='notif-action'>{action}</span> <span className='notif-link'>{link}</span></p>
             </div>
             <p className='time-marker'>{time} ago</p>
         </div>
-    </div>
+    </article>
   )
 }
 
