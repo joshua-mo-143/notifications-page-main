@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+@unread-marker: hsl(1, 90%, 64%);
+@unvisited-link: hsl(219, 85%, 26%);
+
+@card-bg: hsl(0, 0%, 100%);
+@read: hsl(210, 60%, 98%);
+@unread-1: hsl(211, 68%, 94%);
+@screen-bg: hsl(205, 33%, 90%);
+@visited-link: hsl(219, 14%, 63%);
+@name: hsl(219, 12%, 42%);
+@notification-number: hsl(224, 21%, 14%);
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: @screen-bg;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+
+    .notif-list{
+        display: flex;
+        flex-direction: column;
+        background-color: @card-bg;
+        padding: 1rem;
+        gap: .5rem;
+        width: 80%;
+
+        @media screen and (min-width: 501px) {
+            width: 30%;
+            gap: 1rem;
+        }
+
+        @media screen and (min-width: 501px) and (min-height: 500px) and (max-height: 750px) {
+            width: 70%;
+        }
+
+        @media screen and (min-width: 1000px) and (min-height: 600px) {
+            gap: .25;
+            width: 50%;
+        }
+
+        @media screen and (min-width: 800px) and (min-height: 800px) {
+            width: 30%;
+        }
+        
+        
+        .notif-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+
+            .mark-all-read-btn {
+                border: none;
+                background-color: white;
+                cursor:pointer;
+            }
+            .notif-title {
+                flex-direction: row;
+                display: flex;
+                gap: .3rem;
+                font-size: 1rem;
+
+                span {
+                    background-color: @unvisited-link;
+                    color: white;
+                    padding: 0 1rem;
+                    height: 25px;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        .notif-container {
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+            padding: 0.5rem;
+             img {
+                height: 50px;
+                width: 50px;
+                object-fit: cover;
+             }
+             .notif-text {
+                font-size: .6rem;
+
+                @media screen and (min-width: 350px) {
+                    font-size: 0.9rem;
+                }
+                .notif-activity {
+                    .active {
+                    position: relative;
+                    }
+                }
+
+                .time-marker {
+                    font-size: .6rem;
+                    @media screen and (min-width: 350px) {
+                        font-size: 0.9rem;
+                    }
+                }
+             }
+        }
+    }
+}
+
+.notif-container.unread {
+        background-color: @unread-1;
+        position: relative;
+        &:after {
+            position: absolute;
+            content: "";
+            background-color: red;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%; 
+            margin-top: 5px;
+            margin-left: 2px;
+        }
+}
+
+
